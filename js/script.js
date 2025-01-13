@@ -40,9 +40,9 @@ document.getElementById("submitBtn").addEventListener("click", function() {
     // 함수 실행
     sendDataToFlutter(data);
   });
-  
+
 function sendDataToFlutter(data) {
-    window.flutter_inappwebview.callHandler('flutterHandler', data)
+    window.flutter_inappwebview.callHandler('JSgetMessage', data)
       .then(function(response) {
         console.log("Flutter 응답: " + response);
       });
