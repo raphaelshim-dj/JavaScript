@@ -47,3 +47,14 @@ function sendDataToFlutter(data) {
         console.log("Flutter 응답: " + response);
       });
   }
+
+// Flutter에서 호출한 핸들러
+function flutterToJs(message) {
+    console.log("Received message from Flutter: " + message);
+    alert("Received message from Flutter: " + message);
+  }
+
+  // Flutter로 메시지를 보내는 함수
+  function sendMessageToFlutter() {
+    window.flutter_inappwebview.callHandler('jsToFlutter', 'Hello from JavaScript!');
+  }
