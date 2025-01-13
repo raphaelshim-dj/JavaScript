@@ -33,7 +33,14 @@ document.getElementById('launch-app').addEventListener('click', () => {
     }, 2000); // Adjust delay as necessary
 });
 
-
+document.getElementById("submitBtn").addEventListener("click", function() {
+    // 입력값 가져오기
+    const inputValue = document.getElementById("userInput").value;
+    
+    // 함수 실행
+    sendDataToFlutter(data);
+  });
+  
 function sendDataToFlutter(data) {
     window.flutter_inappwebview.callHandler('flutterHandler', data)
       .then(function(response) {
